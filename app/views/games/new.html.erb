@@ -1,0 +1,13 @@
+<h1> <% @letters.each do |letter|%>
+
+ <%= letter %>
+ <% end %>
+
+ </h1>
+
+<form action="/score" data-turbo="false" method="post" >
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :letras, @letters %>
+  <input type="text" name="games" placeholder="Write your word">
+  <input type="submit" value="Enviar!">
+</form>
